@@ -20,7 +20,10 @@ export class EquipmentComponent implements OnInit {
       this.data = data; 
     });
   } 
-
+  public submit(event: Event): void {
+      // To prevent reload page after form submission
+      event.preventDefault();
+  }
   public onKey(event): void {
     this.service.getEquipmentbyName(event.target.value).subscribe(data => {
       console.log("The new data after search" ,data);
