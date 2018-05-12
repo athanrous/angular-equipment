@@ -6,7 +6,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { HttpClientModule } from '@angular/common/http';
 import {RestApiService} from './rest.api.service';
-
+import {
+  MatGridListModule,
+  MatToolbarModule,
+} from '@angular/material';
 const appRoutes: Routes = [
   { path: 'library/equipment', component: EquipmentComponent },
   { path: '', component: AppComponent }
@@ -23,7 +26,9 @@ const appRoutes: Routes = [
     RouterModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(appRoutes)  
+    RouterModule.forRoot(appRoutes),
+    MatToolbarModule,
+    MatGridListModule  
   ],
   providers: [RestApiService],
   bootstrap: [AppComponent],

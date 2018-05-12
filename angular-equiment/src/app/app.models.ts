@@ -1,8 +1,7 @@
-export class RestApiEquipment {
-  constructor(public id: number,
-              public name: string,
-              public url: string,
-              public image: string,
-              ) {
-  }
+
+export interface RestApiEquipment{
+  id: number,
+  name: string,
+  url: string,
+  image: string
 }
