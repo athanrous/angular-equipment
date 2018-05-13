@@ -6,20 +6,30 @@ import { RouterModule, Routes } from '@angular/router';
 import { EquipmentComponent } from './equipment/equipment.component';
 import { HttpClientModule } from '@angular/common/http';
 import {RestApiService} from './rest.api.service';
+import {ExcersiceComponent} from './excersice/excersice.component';
 import {
   MatGridListModule,
   MatToolbarModule,
 } from '@angular/material';
+import { MuscleGroupsComponent } from './muscle-groups/muscle-groups.component';
+import { EquipmentsComponent } from './equipments/equipments.component';
 const appRoutes: Routes = [
   { path: 'library/equipment', component: EquipmentComponent },
-  { path: '', component: AppComponent }
+  { path: '', component: AppComponent },
+  { path: 'library/equipment/exercises/:id', component: ExcersiceComponent},
+  {path: 'library/equipment/exercises/equipments/:id',component: EquipmentsComponent},
+  {path: 'library/equipment/exercises/muscle-groups/:id',component: MuscleGroupsComponent}
+
 ];
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    EquipmentComponent
+    EquipmentComponent,
+    ExcersiceComponent,
+    MuscleGroupsComponent,
+    EquipmentsComponent
   ],
   imports: [
     BrowserModule,

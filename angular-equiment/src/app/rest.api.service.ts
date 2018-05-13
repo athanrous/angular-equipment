@@ -1,5 +1,5 @@
 import { Component,OnInit,Injectable } from '@angular/core';
-import { RestApiEquipment} from './app.models';
+import { RestApiEquipment,RestApiExercise} from './app.models';
 import { Http, Response, HttpModule } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -11,8 +11,7 @@ export class RestApiService {
   public results: RestApiEquipment[];
 
   constructor(private http: HttpClient) { }
-  // http://173.212.236.88/api/v1/exercise/exercises/?equipments={id}
-
+  
   public getEquipmentbyName(search: string): Observable<RestApiEquipment[]> {
   	console.log("Search term is" ,search);
   	if (search) {
@@ -33,10 +32,10 @@ export class RestApiService {
     return res;
     })); 
   }
-  public getExcercises(id: number): Observable<RestApiEquipment[]> {
+  public getExcercises(id: number): Observable<RestApiExercise> {
       
     let equipmentsURL = 'http://173.212.236.88/api/v1/exercise/exercises/?equipments=' + id;
-    return this.http.get(equipmentsURL).pipe(map((res: RestApiEquipment[]) => {
+    return this.http.get(equipmentsURL).pipe(map((res: RestApiExercise) => {
     return res;
     })); 
   }
