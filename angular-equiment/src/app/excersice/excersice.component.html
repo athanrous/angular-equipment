@@ -53,8 +53,7 @@
         <h4 class="card-title">{{excercise.name}}</h4>
         
         <p class="card-text">Difficulty: {{excercise.difficulty['name']}} ,Level: {{excercise.difficulty['level']}} </p>
-        <a class="btn btn-primary waves-light" mdbWavesEffect routerLink="/library/equipment/equipments/">Equipments</a>
-        <a class="btn btn-primary waves-light" mdbWavesEffect routerLink="/library/equipment/exercises/muscle_group/">Muscle Groups</a>
+        <a class="btn btn-primary waves-light" mdbWavesEffect href="/library/equipment/exercises/muscle-groups/{{equipment_id}}/{{excercise.id}}">Muscle Groups</a>
     </div>
   </mat-grid-tile>
 </mat-grid-list>

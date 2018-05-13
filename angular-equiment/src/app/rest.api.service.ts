@@ -1,5 +1,5 @@
 import { Component,OnInit,Injectable } from '@angular/core';
-import { RestApiEquipment,RestApiExercise} from './app.models';
+import { RestApiMuscleGroup,RestApiEquipment,RestApiExercise} from './app.models';
 import { Http, Response, HttpModule } from '@angular/http';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -38,5 +38,14 @@ export class RestApiService {
     return this.http.get(equipmentsURL).pipe(map((res: RestApiExercise) => {
     return res;
     })); 
+  }
+
+  public getMucleGroups(equipment_id: number,excercise_id: number): Observable<any> {
+
+    let equipmentsURL = 'http://173.212.236.88/api/v1/exercise/exercises/?equipments=' + equipment_id;
+    return this.http.get(equipmentsURL).pipe(map((res: RestApiExercise) => {
+    return res['results'];
+    }));
+
   }
 }

@@ -9,15 +9,15 @@ export interface RestApiEquipment{
 export interface RestApiMuscleGroup {
 	
 	id: number,
-    name: string,
-    url: string 
+  name: string,
+  url: string 
 }
 
 export interface RestApiDifficulty {
 
-    id: number,
-    name: string,
-    level: number           
+  id: number,
+  name: string,
+  level: number           
 }
 
 export interface RestApiExercise extends RestApiMuscleGroup {
@@ -33,11 +33,11 @@ export interface RestApiExercise extends RestApiMuscleGroup {
 export interface RestApiResults extends RestApiDifficulty,RestApiMuscleGroup,RestApiEquipment{
 	
 	id: number,
-    name: string,
-    video_url: string,
-    difficulty: RestApiDifficulty,
-    equipments: Array<RestApiEquipment>,
-    muscle_group: Array<RestApiMuscleGroup>,
-    images: any,
+  name: string,
+  video_url: string,
+  difficulty: RestApiDifficulty,
+  equipments: Array<RestApiEquipment>,
+  muscle_group: Array<RestApiMuscleGroup>,
+  images: any,
 	url: string
 }

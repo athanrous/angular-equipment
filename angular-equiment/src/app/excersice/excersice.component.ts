@@ -13,14 +13,13 @@ export class ExcersiceComponent implements OnInit {
   
   public data: RestApiExercise;
   public results: Array<RestApiResults>;
-  public excercise_id: number; 		
+  public equipment_id: number; 		
   constructor(private http: HttpClient,private service: RestApiService,private route: ActivatedRoute) {
-  	this.route.params.subscribe( params => this.excercise_id = params['id'] );
+  	this.route.params.subscribe( params => {this.equipment_id = params['id'];});
   }
 
   ngOnInit() {
-  	this.service.getExcercises(this.excercise_id).subscribe(data => {
-  		console.log("Data are" ,data);
+  	this.service.getExcercises(this.equipment_id).subscribe(data => {
       	this.data = data;
       	this.results = data['results']; 
   	});

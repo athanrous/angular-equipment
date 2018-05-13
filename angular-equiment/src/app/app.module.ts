@@ -18,7 +18,7 @@ const appRoutes: Routes = [
   { path: '', component: AppComponent },
   { path: 'library/equipment/exercises/:id', component: ExcersiceComponent},
   {path: 'library/equipment/exercises/equipments/:id',component: EquipmentsComponent},
-  {path: 'library/equipment/exercises/muscle-groups/:id',component: MuscleGroupsComponent}
+  {path: 'library/equipment/exercises/muscle-groups/:equipment_id/:exercise_id',component: MuscleGroupsComponent}
 
 ];
 
